@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project/screens/biometric/Biometric.dart';
 import 'package:project/services/api_service.dart';
 
-import 'AttendanceDetails.dart';
-
 class Attendance extends StatefulWidget {
   static String routeName = 'Attendance';
 

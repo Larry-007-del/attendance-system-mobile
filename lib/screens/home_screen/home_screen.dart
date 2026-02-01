@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:project/screens/Attendance_screen/Attendance.dart';
 import 'package:project/screens/Timetable/TimeTable.dart';
