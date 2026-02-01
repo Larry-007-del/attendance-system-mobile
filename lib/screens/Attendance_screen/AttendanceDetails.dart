@@ -60,15 +60,6 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
     );
   }
 }
-                child: Text('Report'),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 void main() {
   runApp(MaterialApp(

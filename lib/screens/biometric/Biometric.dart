@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/Attendance_screen/AttendanceDetails.dart';
 import 'authentication.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:project/services/api_service.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +27,6 @@ class Biometric extends StatefulWidget {
   @override
   State<Biometric> createState() => _BiometricState();
 }
-
-import 'package:geolocator/geolocator.dart';
-import 'package:project/services/api_service.dart';
 
 class _BiometricState extends State<Biometric> {
   final TextEditingController _tokenController = TextEditingController();
