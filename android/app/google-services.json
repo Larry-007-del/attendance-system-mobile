@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "770224217348",
+    "firebase_url": "https://attendence-8c08c-default-rtdb.firebaseio.com",
+    "project_id": "attendence-8c08c",
+    "storage_bucket": "attendence-8c08c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770224217348:android:dead66ff8993c62e284451",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770224217348-sdfj7kboqpd973jc9rce41gu7dtfe8nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtJF0UldFGj62GI6xQaycoXtd4wMrRJtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770224217348-sdfj7kboqpd973jc9rce41gu7dtfe8nj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "770224217348-iepknh62ojhbn88ttac9rhguneco2sv3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.project.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

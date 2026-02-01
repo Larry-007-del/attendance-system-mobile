@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAXJGGMwvIv2hn9xB2w9acxnslnKWoo2UY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>770224217348</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.project</string>
+	<key>PROJECT_ID</key>
+	<string>attendence-8c08c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>attendence-8c08c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:770224217348:ios:f84044bc1499167c284451</string>
+	<key>DATABASE_URL</key>
+	<string>https://attendence-8c08c-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
