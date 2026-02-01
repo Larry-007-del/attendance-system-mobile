@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = 'SplashScreen';
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -13,9 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
+      if (!mounted) return;
       Navigator.pushNamedAndRemoveUntil(
-          context, login_screen.routeName, (route) => false);
+          context, LoginScreen.routeName, (route) => false);
     });
   }
 

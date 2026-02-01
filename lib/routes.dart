@@ -11,8 +11,8 @@ import 'screens/home_screen/home_screen.dart';
 import 'screens/my_profile/my_profile.dart';
 
 Map<String, WidgetBuilder> routes = {
-  SplashScreen.routeName: (context) => SplashScreen(),
-  login_screen.routeName: (context) => login_screen(),
+  SplashScreen.routeName: (context) => const SplashScreen(),
+  LoginScreen.routeName: (context) => const LoginScreen(),
   HomeScreen.routeName: (context) => HomeScreen(),
   MyProfileScreen.routeName: (context) => MyProfileScreen(),
   Attendance.routeName: (context) => Attendance(),

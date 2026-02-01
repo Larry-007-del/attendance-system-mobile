@@ -25,6 +25,7 @@ class Courses {
 
 class ChoosenCourse extends StatefulWidget {
   static String routeName = 'ChoosenCourse';
+  const ChoosenCourse({super.key});
 
   @override
   _ChoosenCourseState createState() => _ChoosenCourseState();
@@ -66,7 +67,7 @@ class _ChoosenCourseState extends State<ChoosenCourse> {
     }
   }
 
-  void _submitSelection() async {
+  Future<void> _submitSelection() async {
     try {
       User? user = FirebaseAuth.instance.currentUser;
       if (user != null) {
@@ -105,28 +106,28 @@ class _ChoosenCourseState extends State<ChoosenCourse> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Select Courses')),
+      appBar: AppBar(title: const Text('Select Courses')),
       body: ListView.builder(
         itemCount: courses.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(courses[index].courseName),
             tileColor: selectedCourses.contains(courses[index].courseName)
-                ? Colors.blue.withOpacity(0.3)
+                ? Colors.blue.withValues(alpha: 0.3)
                 : null,
             onTap: () {
               _onCourseSelected(courses[index].courseName);
             },
             trailing: selectedCourses.contains(courses[index].courseName)
-                ? Icon(Icons.check_box)
-                : Icon(Icons.check_box_outline_blank),
+                ? const Icon(Icons.check_box)
+                : const Icon(Icons.check_box_outline_blank),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _submitSelection();
-          Navigator.pushNamed(context, HomeScreen.routeName);
+        onPressed: () async {
+          await _submitSelection();
+          if (mounted) Navigator.pushNamed(context, HomeScreen.routeName);
         },
         child: Icon(Icons.check),
         backgroundColor: Colors.blue,

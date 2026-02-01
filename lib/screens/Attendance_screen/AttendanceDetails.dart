@@ -3,6 +3,7 @@ import 'package:project/services/api_service.dart';
 
 class AttendanceDetails extends StatefulWidget {
   static String routeName = 'AttendanceDetails';
+  const AttendanceDetails({super.key});
 
   @override
   _AttendanceDetailsState createState() => _AttendanceDetailsState();
@@ -28,11 +29,11 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
         future: historyFuture,
         builder: (context, snapshot) {
            if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('No attendance records found.'));
+            return const Center(child: Text('No attendance records found.'));
           } else {
              final records = snapshot.data!;
              return ListView.builder(
@@ -48,7 +49,7 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
                    children: attendances.map<Widget>((att) {
                      return ListTile(
                        title: Text(att['date'] ?? ''),
-                       leading: Icon(Icons.check_circle, color: Colors.green),
+                       leading: const Icon(Icons.check_circle, color: Colors.green),
                      );
                    }).toList(),
                  );
@@ -62,7 +63,7 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: AttendanceDetails(),
   ));

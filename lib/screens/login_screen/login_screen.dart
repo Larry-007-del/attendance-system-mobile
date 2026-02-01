@@ -9,20 +9,22 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
 
   runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: login_screen(),
+      home: LoginScreen(),
     ),
   );
 }
 
-class login_screen extends StatefulWidget {
-  static String routeName = 'login_screen';
+class LoginScreen extends StatefulWidget {
+  static String routeName = 'LoginScreen';
+  const LoginScreen({super.key});
+
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
 
-class _SignInScreenState extends State<login_screen> {
+class _SignInScreenState extends State<LoginScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -66,11 +68,11 @@ class _SignInScreenState extends State<login_screen> {
           //mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(height: 40,),
-            Center(
+            const SizedBox(height: 40,),
+            const Center(
               child: Text('Sign in',style: TextStyle(fontSize: 25,)),
             ),
-            SizedBox(height: 150,),
+            const SizedBox(height: 150,),
           TextField(
         controller: _emailController,
         decoration: InputDecoration(
@@ -80,7 +82,7 @@ class _SignInScreenState extends State<login_screen> {
           ),
         ),
       ),
-      SizedBox(height: 16.0),
+      const SizedBox(height: 16.0),
 
       // Password Field
       TextField(
@@ -93,7 +95,7 @@ class _SignInScreenState extends State<login_screen> {
           ),
         ),
       ),
-            SizedBox(height: 32.0),
+            const SizedBox(height: 32.0),
 
             // Sign In Button
             ElevatedButton(

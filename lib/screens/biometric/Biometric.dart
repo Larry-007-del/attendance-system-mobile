@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Biometric(),
+      home: const Biometric(),
     );
   }
 }
@@ -104,8 +104,9 @@ class _BiometricState extends State<Biometric> {
       });
 
       if (result['success']) {
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Attendance Marked Successfully!")),
+          const SnackBar(content: Text("Attendance Marked Successfully!")),
         );
         Navigator.pushReplacementNamed(context, AttendanceDetails.routeName);
       }

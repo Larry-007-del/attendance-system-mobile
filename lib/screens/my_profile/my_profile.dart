@@ -34,6 +34,7 @@ class Students {
 class MyProfileScreen extends StatefulWidget {
 
   static String routeName = 'MyProfileScreen';
+  const MyProfileScreen({super.key});
 
   @override
   _ProfileScreenState createState() => _ProfileScreenState();

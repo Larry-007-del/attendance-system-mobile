@@ -4,6 +4,7 @@ import 'package:project/services/api_service.dart';
 
 class Attendance extends StatefulWidget {
   static String routeName = 'Attendance';
+  const Attendance({super.key});
 
   @override
   _AttendanceState createState() => _AttendanceState();
@@ -29,11 +30,11 @@ class _AttendanceState extends State<Attendance> {
         future: coursesFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('No courses found.'));
+            return const Center(child: Text('No courses found.'));
           } else {
             List<dynamic> courses = snapshot.data!;
             return ListView.builder(
@@ -42,11 +43,11 @@ class _AttendanceState extends State<Attendance> {
                 final course = courses[index];
                 return Card(
                   elevation: 3.0,
-                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: ListTile(
                     title: Text(
                       course['name'] ?? 'Unknown Course',
-                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(course['course_code'] ?? ''),
                     onTap: () {

@@ -7,7 +7,7 @@ class ApiService {
   final String baseUrl = "https://attendance-system-backend-z1wl.onrender.com"; 
   
   // TODO: Implement proper authentication to get this token
-  String? _authToken = "YOUR_AUTH_TOKEN"; 
+  final String? _authToken = "YOUR_AUTH_TOKEN"; 
 
   Future<List<dynamic>> getEnrolledCourses() async {
     try {

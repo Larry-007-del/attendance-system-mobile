@@ -8,15 +8,16 @@ import 'package:project/firebase_options.dart';
 void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
 
-  runApp(SignupScreen());
+  runApp(const SignupScreen());
 }
 
 class SignupScreen extends StatelessWidget {
   static String routeName = 'Signup_screen';
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SignUpPage(),
     );
@@ -24,6 +25,8 @@ class SignupScreen extends StatelessWidget {
 }
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -51,7 +54,9 @@ class _SignUpPageState extends State<SignUpPage> {
         'phone': _phoneController.text,
       });
       //print('User signed up: ${userCredential.user!.uid}');
-      Navigator.pushNamed(context, ChoosenCourse.routeName);
+      if (mounted) {
+        Navigator.pushNamed(context, ChoosenCourse.routeName);
+      }
     } catch (e) {
       print('Error during sign up: $e');
     }
@@ -68,14 +73,14 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 40,),
-            Center(
+            const SizedBox(height: 40,),
+            const Center(
               child: Text(
                 'Sign Up',
                 style: TextStyle(fontSize: 25),
               ),
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
@@ -123,7 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
               onPressed: () {
                 _signUp();
               },
-              child: Text('Sign Up'),
+              child: const Text('Sign Up'),
             ),
           ],
         ),
